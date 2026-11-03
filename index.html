@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth scroll-pt-16 [&.reduce-motion]:scroll-auto">
+<head>
+  <meta charset="UTF-8">
+  <meta name="color-scheme" content="dark">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dwayne Arjon T. Santiago | IT Student Portfolio</title>
+  <meta name="description" content="Portfolio of Dwayne Arjon T. Santiago from Urdaneta City, Philippines, a BSIT student focused on backend development, web development and video editing.">
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/project-manager.js" defer></script>
+  <script>
+    // Tailwind config: palette and animations. No custom stylesheet needed.
+    tailwind.config = { theme: { extend: {
+      fontFamily: { sans: ['"DM Sans"', 'system-ui', 'sans-serif'], display: ['"Big Shoulders Display"', 'Impact', 'sans-serif'], mono: ['"DM Mono"', 'ui-monospace', 'monospace'] },
+      colors: { bg: 'rgb(var(--bg) / <alpha-value>)', panel: 'rgb(var(--panel) / <alpha-value>)', line: 'rgb(var(--line) / <alpha-value>)', solid: 'rgb(var(--solid) / <alpha-value>)', ink: '#E8EDF7', mute: '#94A0B8', brand: '#6096FF', rec: '#EF5350' },
+      keyframes: {
+        up: { from: { transform: 'translateY(105%)' }, to: { transform: 'none' } },
+        blink: { '50%': { opacity: '0.2' } },
+        ticker: { to: { transform: 'translateX(-50%)' } },
+        shift: { '0%,100%': { backgroundPosition: '0% 50%' }, '50%': { backgroundPosition: '100% 50%' } },
+        float: { '50%': { transform: 'translateY(-8px)' } },
+        pulsering: { '0%,100%': { boxShadow: '0 0 0 0 rgba(96,150,255,.55)' }, '60%': { boxShadow: '0 0 0 12px rgba(96,150,255,0)' } }
+      },
+      animation: {
+        up: 'up .9s cubic-bezier(.2,.8,.2,1) both', blink: 'blink 1.4s step-end infinite', ticker: 'ticker 28s linear infinite',
+        shift: 'shift 6s ease infinite', float: 'float 5s ease-in-out infinite', pulsering: 'pulsering 2.6s ease-out infinite'
+      }
+    } } };
+  </script>
+  <style type="text/tailwindcss">
+    /* Tailwind base layer: two dark themes and visible keyboard focus */
+    @layer base {
+      :root { --bg: 9 12 20; --panel: 15 21 34; --line: 48 62 88; --solid: 17 28 54; }
+      .theme-charcoal { --bg: 18 18 20; --panel: 27 27 31; --line: 62 62 70; --solid: 30 30 38; }
+      :focus-visible { outline: 3px solid #EF5350; outline-offset: 3px; }
+    }
+  </style>
+</head>
+
+<body class="overflow-x-hidden bg-bg font-sans text-ink antialiased transition-colors duration-300">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:bg-rec focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 border-b-2 border-line bg-bg/95 backdrop-blur">
+    <nav class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-5 sm:px-8" aria-label="Main navigation">
+      <a href="#home" aria-label="Dwayne Santiago, back to top" class="font-display text-2xl font-black uppercase tracking-wide">
+        <span aria-hidden="true" class="sm:hidden">DS</span>
+        <span aria-hidden="true" class="hidden sm:inline">D. Santiago</span>
+      </a>
+
+      <ul class="hidden items-center gap-6 xl:flex">
+        <li><a class="nav-link border-b-2 border-transparent py-1 text-sm text-mute transition hover:border-brand hover:text-ink aria-[current=true]:border-rec aria-[current=true]:font-bold aria-[current=true]:text-ink" href="#about">About</a></li>
+        <li><a class="nav-link border-b-2 border-transparent py-1 text-sm text-mute transition hover:border-brand hover:text-ink aria-[current=true]:border-rec aria-[current=true]:font-bold aria-[current=true]:text-ink" href="#services">Services</a></li>
+        <li><a class="nav-link border-b-2 border-transparent py-1 text-sm text-mute transition hover:border-brand hover:text-ink aria-[current=true]:border-rec aria-[current=true]:font-bold aria-[current=true]:text-ink" href="#skills">Skills</a></li>
+        <li><a class="nav-link border-b-2 border-transparent py-1 text-sm text-mute transition hover:border-brand hover:text-ink aria-[current=true]:border-rec aria-[current=true]:font-bold aria-[current=true]:text-ink" href="#journey">Journey</a></li>
+        <li><a class="nav-link border-b-2 border-transparent py-1 text-sm text-mute transition hover:border-brand hover:text-ink aria-[current=true]:border-rec aria-[current=true]:font-bold aria-[current=true]:text-ink" href="#projects">Projects</a></li>
+        <li><a class="nav-link border-b-2 border-transparent py-1 text-sm text-mute transition hover:border-brand hover:text-ink aria-[current=true]:border-rec aria-[current=true]:font-bold aria-[current=true]:text-ink" href="#youtube-performance">YouTube Analytics</a></li>
+        <li><a class="nav-link border-b-2 border-transparent py-1 text-sm text-mute transition hover:border-brand hover:text-ink aria-[current=true]:border-rec aria-[current=true]:font-bold aria-[current=true]:text-ink" href="#education">Education</a></li>
+        <li><a class="nav-link border-b-2 border-transparent py-1 text-sm text-mute transition hover:border-brand hover:text-ink aria-[current=true]:border-rec aria-[current=true]:font-bold aria-[current=true]:text-ink" href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="flex items-center gap-2">
+        <span id="timecode" aria-hidden="true" class="hidden font-mono text-sm sm:inline">00:00:00</span>
+        <button id="theme-toggle" type="button" aria-label="Switch color theme" class="rounded-sm border-2 border-line px-2 py-1.5 text-xs font-medium transition hover:border-brand sm:px-3 sm:text-sm hover:shadow-[0_0_16px_rgb(96_150_255/0.5)]"><span id="theme-state">Midnight</span></button>
+        <button id="motion-toggle" type="button" aria-pressed="true" aria-label="Toggle animations" class="rounded-sm border-2 border-line px-2 py-1.5 text-xs font-medium transition hover:border-brand sm:px-3 sm:text-sm hover:shadow-[0_0_16px_rgb(96_150_255/0.5)]">Motion <span id="motion-state">On</span></button>
+        <button id="menu-toggle" type="button" class="rounded-sm border-2 border-line px-3 py-1.5 text-sm font-medium xl:hidden" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+      </div>
+    </nav>
+
+    <ul id="mobile-menu" class="hidden border-t-2 border-line px-5 pb-3 xl:hidden">
+      <li><a class="block py-3 text-lg font-medium" href="#about">About</a></li>
+      <li><a class="block py-3 text-lg font-medium" href="#services">Services</a></li>
+      <li><a class="block py-3 text-lg font-medium" href="#skills">Skills</a></li>
+      <li><a class="block py-3 text-lg font-medium" href="#journey">Journey</a></li>
+      <li><a class="block py-3 text-lg font-medium" href="#projects">Projects</a></li>
+      <li><a class="block py-3 text-lg font-medium" href="#youtube-performance">YouTube Analytics</a></li>
+      <li><a class="block py-3 text-lg font-medium" href="#education">Education</a></li>
+      <li><a class="block py-3 text-lg font-medium" href="#contact">Contact</a></li>
+    </ul>
+
+    <div id="progress-bar" class="absolute -bottom-0.5 left-0 h-[3px] w-0 bg-gradient-to-r from-brand to-rec" aria-hidden="true"></div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section id="home" class="relative flex min-h-[calc(100svh-4rem)] flex-col justify-between overflow-hidden bg-gradient-to-br from-bg via-solid to-blue-900 pt-8 text-white" aria-labelledby="hero-title">
+      <div aria-hidden="true" class="pointer-events-none absolute -right-24 top-10 h-[26rem] w-[26rem] rounded-full bg-brand/20 blur-3xl"></div>
+
+      <div class="relative mx-auto w-full max-w-7xl px-5 sm:px-8">
+        <p class="flex flex-wrap items-center gap-x-4 font-mono text-sm">
+          <span class="flex items-center gap-2"><span class="animate-blink [.reduce-motion_&]:animate-none h-3 w-3 rounded-full bg-red-500" aria-hidden="true"></span>REC</span>
+          <span>BSIT 3</span>
+          <span>Urdaneta City University</span>
+        </p>
+
+        <div class="mt-6 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between sm:gap-6 lg:gap-8">
+          <h1 id="hero-title" class="min-w-0 font-display text-[12vw] font-black uppercase leading-[0.9] tracking-tight sm:text-[8vw] lg:text-8xl xl:text-9xl">
+          <span class="block overflow-hidden"><span class="block animate-up [.reduce-motion_&]:animate-none" style="animation-delay:.05s">Dwayne Arjon T.</span></span>
+          <span class="block overflow-hidden"><span class="block animate-up [.reduce-motion_&]:animate-none" style="animation-delay:.2s">Santiago</span></span>
+          </h1>
+
+          <!-- Save your profile photo as images/profile.jpg -->
+          <figure class="animate-float [.reduce-motion_&]:animate-none order-first shrink-0 self-start sm:order-last sm:self-auto">
+            <div class="animate-shift bg-[length:300%_300%] [.reduce-motion_&]:animate-none rounded-md bg-gradient-to-br from-brand via-solid to-rec p-[3px]">
+              <img src="images/profile.jpg" alt="Portrait of Dwayne Arjon T. Santiago" class="aspect-[4/5] w-32 rounded-sm object-top object-cover transition duration-500 hover:-rotate-2 hover:scale-105 sm:w-40 md:w-48 lg:w-60 xl:w-72">
+            </div>
+          </figure>
+        </div>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
+          <div>
+            <p class="font-display text-4xl font-black uppercase leading-none sm:text-5xl">Code by day, edits by night.</p>
+            <p class="mt-3 font-display text-xl font-extrabold uppercase tracking-wide text-brand sm:text-2xl">IT Student • Backend Developer • Creative Editor</p>
+            <p class="mt-3 max-w-xl text-lg text-white">Based in Urdaneta City, Pangasinan. I build the logic behind web apps and cut the videos that go with them. Third-year BSIT student, 70 videos in the bag and counting.</p>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <a href="#projects" class="rounded-sm bg-gradient-to-r from-brand to-cyan-300 bg-[length:200%_100%] px-6 py-3 font-bold text-bg transition-all duration-500 animate-pulsering [.reduce-motion_&]:animate-none hover:-translate-y-1 hover:bg-right hover:shadow-[0_10px_30px_-8px_rgb(96_150_255/0.8)]">View My Work</a>
+            <a href="#contact" class="rounded-sm border-2 border-slate-500 px-6 py-3 font-bold transition hover:-translate-y-1 hover:border-brand hover:text-brand">Contact Me</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative mt-10 overflow-hidden border-t-2 border-white/40 py-3" aria-hidden="true">
+        <div class="animate-ticker hover:[animation-play-state:paused] [.reduce-motion_&]:animate-none flex w-max gap-10 whitespace-nowrap font-display text-2xl font-extrabold uppercase">
+          <span>Code by day / Edits by night / Backend Development / Web Development / Video Editing / HTML CSS JavaScript /</span>
+          <span>Code by day / Edits by night / Backend Development / Web Development / Video Editing / HTML CSS JavaScript /</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="mx-auto max-w-7xl px-5 py-20 sm:px-8" aria-labelledby="about-title">
+      <h2 id="about-title" class="font-display text-[15vw] font-black uppercase leading-none sm:text-8xl xl:text-9xl bg-gradient-to-b from-ink to-mute bg-clip-text text-transparent">About me</h2>
+
+      <div class="mt-12 max-w-4xl">
+        <div class="reveal mb-8 flex items-center gap-4">
+          <div role="img" aria-label="Avatar placeholder with the initials DS" class="grid h-20 w-20 shrink-0 place-items-center rounded-full border-2 border-line bg-gradient-to-br from-panel to-solid font-display text-3xl font-black text-brand">DS</div>
+          <p class="font-display text-2xl font-extrabold uppercase">Dwayne Arjon T. Santiago</p>
+        </div>
+
+        <div class="reveal">
+          <p class="max-w-prose text-xl">I'm a third-year IT student interested in backend and web development. I also have experience and interest in video editing and digital content creation. I want to keep improving my technical skills by building useful, functional and creative projects.</p>
+
+          <div class="mt-8 border-2 border-line bg-gradient-to-br from-panel to-bg transition duration-300 hover:border-brand hover:shadow-[0_0_0_1px_rgb(96_150_255),0_14px_40px_-12px_rgb(96_150_255/0.55)]">
+            <div class="h-9 border-b-2 border-line bg-[repeating-linear-gradient(135deg,rgb(var(--line))_0_18px,rgb(var(--bg))_18px_36px)]"></div>
+            <dl class="grid divide-y-2 divide-line sm:grid-cols-2 sm:divide-y-0">
+              <div class="p-4 sm:border-b-2 sm:border-r-2 sm:border-line"><dt class="font-mono text-xs text-mute">PROGRAM</dt><dd class="font-bold">BS Information Technology, 3rd Year</dd></div>
+              <div class="p-4 sm:border-b-2 sm:border-line"><dt class="font-mono text-xs text-mute">SCHOOL</dt><dd class="font-bold">Urdaneta City University</dd></div>
+              <div class="p-4 sm:border-r-2 sm:border-line"><dt class="font-mono text-xs text-mute">CAREER GOAL</dt><dd class="font-bold">Backend and web developer with creative content skills</dd></div>
+              <div class="p-4"><dt class="font-mono text-xs text-mute">STRENGTHS</dt><dd class="font-bold">Problem solving, adaptability, learning by building</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 grid grid-cols-2 gap-3 lg:grid-cols-4">
+        <div class="reveal rounded-sm border-2 border-line bg-gradient-to-br from-panel to-bg p-5 transition hover:-translate-y-1 hover:border-brand hover:shadow-[0_0_0_1px_rgb(96_150_255),0_14px_40px_-12px_rgb(96_150_255/0.55)]">
+          <p class="font-display text-6xl font-black leading-none"><span class="count" data-count="3">3</span><span>rd</span></p>
+          <p class="mt-2 font-bold">Year level</p><p class="text-sm text-mute">BS Information Technology</p>
+        </div>
+        <div class="reveal rounded-sm border-2 border-line bg-gradient-to-br from-panel to-bg p-5 transition hover:-translate-y-1 hover:border-brand hover:shadow-[0_0_0_1px_rgb(96_150_255),0_14px_40px_-12px_rgb(96_150_255/0.55)]">
+          <p class="font-display text-6xl font-black leading-none"><span class="count" data-count="3">3</span></p>
+          <p class="mt-2 font-bold">Years editing videos</p><p class="text-sm text-mute">and still hitting export</p>
+        </div>
+        <div class="reveal rounded-sm border-2 border-line bg-gradient-to-br from-panel to-bg p-5 transition hover:-translate-y-1 hover:border-brand hover:shadow-[0_0_0_1px_rgb(96_150_255),0_14px_40px_-12px_rgb(96_150_255/0.55)]">
+          <p class="font-display text-6xl font-black leading-none"><span class="count" data-count="70">70</span></p>
+          <p class="mt-2 font-bold">Videos edited</p><p class="text-sm text-mute">give or take a few retakes</p>
+        </div>
+        <div class="reveal rounded-sm border-2 border-line bg-gradient-to-br from-panel to-bg p-5 transition hover:-translate-y-1 hover:border-brand hover:shadow-[0_0_0_1px_rgb(96_150_255),0_14px_40px_-12px_rgb(96_150_255/0.55)]">
+          <p class="font-display text-6xl font-black leading-none"><span class="count" data-count="3">3</span></p>
+          <p class="mt-2 font-bold">Core technologies</p><p class="text-sm text-mute">HTML, CSS and JavaScript</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="mx-auto max-w-7xl px-5 pb-20 sm:px-8" aria-labelledby="services-title">
+      <h2 id="services-title" class="font-display text-[15vw] font-black uppercase leading-none sm:text-8xl xl:text-9xl bg-gradient-to-b from-ink to-mute bg-clip-text text-transparent">Services</h2>
+
+      <div class="mt-12 grid gap-4 md:grid-cols-2">
+        <article class="reveal group border-2 border-line bg-gradient-to-br from-panel to-bg p-6 transition hover:-translate-y-1.5 hover:border-brand hover:shadow-[0_0_0_1px_rgb(96_150_255),0_14px_40px_-12px_rgb(96_150_255/0.55)]">
+          <h3 class="font-display text-4xl font-extrabold uppercase leading-none">Video editing</h3>
+          <p class="mt-3 text-mute">I edit videos and create digital content, from cutting and pacing to polishing the final result.</p>
+          <ul class="mt-4 flex flex-wrap gap-x-4 font-mono text-sm text-brand"><li>CapCut</li><li>Content editing</li></ul>
+        </article>
+
+        <article class="reveal group border-2 border-line bg-gradient-to-br from-panel to-bg p-6 transition hover:-translate-y-1.5 hover:border-brand hover:shadow-[0_0_0_1px_rgb(96_150_255),0_14px_40px_-12px_rgb(96_150_255/0.55)]">
+          <h3 class="font-display text-4xl font-extrabold uppercase leading-none">Simple websites</h3>
+          <p class="mt-3 text-mute">I build responsive, clean websites using HTML5, Tailwind CSS and vanilla JavaScript.</p>
+          <ul class="mt-4 flex flex-wrap gap-x-4 font-mono text-sm text-brand"><li>HTML5</li><li>Tailwind CSS</li><li>JavaScript</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="mx-auto max-w-7xl px-5 pb-20 sm:px-8" aria-labelledby="skills-title">
+      <h2 id="skills-title" class="font-display text-[15vw] font-black uppercase leading-none sm:text-8xl xl:text-9xl bg-gradient-to-b from-ink to-mute bg-clip-text text-transparent">Skills</h2>
+
+      <div class="mt-12 border-b-2 border-line">
+        <article class="reveal grid gap-3 border-t-2 border-line py-6 hover:border-t-brand md:grid-cols-[14rem_1fr]">
+          <h3 class="font-display text-3xl font-extrabold uppercase"><span aria-hidden="true" class="mr-2 font-mono text-sm font-normal text-mute">V1</span>Technical</h3>
+          <ul class="flex flex-wrap gap-2">
+            <li class="rounded-sm border-2 border-line px-3 py-1 text-sm font-medium transition hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-bg hover:shadow-[0_0_16px_rgb(96_150_255/0.5)]">HTML5</li>
+            <li class="rounded-sm border-2 border-line px-3 py-1 text-sm font-medium transition hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-bg hover:shadow-[0_0_16px_rgb(96_150_255/0.5)]">CSS</li>
+            <li class="rounded-sm border-2 border-line px-3 py-1 text-sm font-medium transition hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-bg hover:shadow-[0_0_16px_rgb(96_150_255/0.5)]">JavaScript</li>
+            <li class="rounded-sm border-2 border-line px-3 py-1 text-sm font-medium transition hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-bg hover:shadow-[0_0_16px_rgb(96_150_255/0.5)]">Tailwind CSS</li>
+            <li class="rounded-sm border-2 border-line px-3 py-1 text-sm font-medium transition hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-bg hover:shadow-[0_0_16px_rgb(96_150_255/0.5)]">Backend Development</li>
+            <li class="rounded-sm border-2 border-line px-3 py-1 text-sm font-medium transition hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-bg hover:shadow-[0_0_16px_rgb(96_150_255/0.5)]">Responsive Web Design</li>
+          </ul>
+        </article>
+
+        <article class="reveal grid gap-3 border-t-2 border-line py-6 hover:border-t-brand md:grid-cols-[14rem_1fr]">
+          <h3 class="font-display text-3xl font-extrabold uppercase"><span aria-hidden="true" class="mr-2 font-mono text-sm font-normal text-mute">V2</span>Creative</h3>
+          <ul class="flex flex-wrap gap-2">
+            <li class="rounded-sm border-2 border-line px-3 py-1 text-sm font-medium transition hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-bg hover:shadow-[0_0_16px_rgb(96_150_255/0.5)]">Video Editing</li>
+            <li class="rounded-sm border-2 border-line px-3 py-1 text-sm font-medium transition hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-bg hover:shadow-[0_0_16px_rgb(96_150_255/0.5)]">Content Editing</li>
+            <li class="rounded-sm border-2 border-line px-3 py-1 text-sm font-medium transition hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-bg hover:shadow-[0_0_16px_rgb(96_150_255/0.5)]">Visual Design</li>
+          </ul>
+        </article>
+
+        <article class="reveal grid gap-3 border-t-2 border-line py-6 hover:border-t-brand md:grid-cols-[14rem_1fr]">
+          <h3 class="font-display text-3xl font-extrabold uppercase"><span aria-hidden="true" class="mr-2 font-mono text-sm font-normal text-mute">T1</span>Tools</h3>
+          <ul class="flex flex-wrap gap-2">
+            <li class="rounded-sm border-2 border-line px-3 py-1 text-sm font-medium transition hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-bg hover:shadow-[0_0_16px_rgb(96_150_255/0.5)]">VS Code</li>
+            <li class="rounded-sm border-2 border-line px-3 py-1 text-sm font-medium transition hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-bg hover:shadow-[0_0_16px_rgb(96_150_255/0.5)]">CapCut</li>
+            <li class="rounded-sm border-2 border-line px-3 py-1 text-sm font-medium transition hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-bg hover:shadow-[0_0_16px_rgb(96_150_255/0.5)]">Canva</li>
+            <li class="rounded-sm border-2 border-line px-3 py-1 text-sm font-medium transition hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-bg hover:shadow-[0_0_16px_rgb(96_150_255/0.5)]">Photoshop</li>
+          </ul>
+        </article>
+
+        <article class="reveal grid gap-3 border-t-2 border-line py-6 hover:border-t-brand md:grid-cols-[14rem_1fr]">
+          <h3 class="font-display text-3xl font-extrabold uppercase"><span aria-hidden="true" class="mr-2 font-mono text-sm font-normal text-mute">A1</span>Soft skills</h3>
+          <ul class="flex flex-wrap gap-2">
+            <li class="rounded-sm border-2 border-line px-3 py-1 text-sm font-medium transition hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-bg hover:shadow-[0_0_16px_rgb(96_150_255/0.5)]">Problem Solving</li>
+            <li class="rounded-sm border-2 border-line px-3 py-1 text-sm font-medium transition hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-bg hover:shadow-[0_0_16px_rgb(96_150_255/0.5)]">Communication</li>
+            <li class="rounded-sm border-2 border-line px-3 py-1 text-sm font-medium transition hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-bg hover:shadow-[0_0_16px_rgb(96_150_255/0.5)]">Adaptability</li>
+            <li class="rounded-sm border-2 border-line px-3 py-1 text-sm font-medium transition hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-bg hover:shadow-[0_0_16px_rgb(96_150_255/0.5)]">Continuous Learning</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- DEVELOPER JOURNEY -->
+    <section id="journey" class="bg-gradient-to-b from-panel to-bg px-5 py-20 sm:px-8" aria-labelledby="journey-title">
+      <div class="mx-auto max-w-7xl">
+        <h2 id="journey-title" class="font-display text-[15vw] font-black uppercase leading-none sm:text-8xl xl:text-9xl bg-gradient-to-b from-ink to-mute bg-clip-text text-transparent">Developer Journey</h2>
+        <p class="mt-4 text-lg text-mute">Move the playhead: select a stage.</p>
+
+        <div class="relative mt-12">
+          <div class="absolute left-[10%] right-[10%] top-3 h-1 bg-line"><div id="journey-fill" class="h-full w-0 bg-gradient-to-r from-brand to-rec transition-[width] duration-500"></div></div>
+          <ol class="grid grid-cols-5 gap-1">
+            <li><button type="button" class="stage-btn group flex w-full flex-col items-center gap-3 text-center" aria-expanded="false" aria-controls="stage-1"><span class="relative z-10 h-6 w-6 rounded-full border-2 border-mute bg-bg transition group-hover:scale-125 group-aria-expanded:scale-125 group-aria-expanded:border-rec group-aria-expanded:bg-rec group-aria-expanded:shadow-[0_0_0_6px_rgb(239_83_80/0.3)]"></span><span class="break-words text-[11px] font-medium leading-tight sm:text-sm group-aria-expanded:font-bold">Student</span></button></li>
+            <li><button type="button" class="stage-btn group flex w-full flex-col items-center gap-3 text-center" aria-expanded="false" aria-controls="stage-2"><span class="relative z-10 h-6 w-6 rounded-full border-2 border-mute bg-bg transition group-hover:scale-125 group-aria-expanded:scale-125 group-aria-expanded:border-rec group-aria-expanded:bg-rec group-aria-expanded:shadow-[0_0_0_6px_rgb(239_83_80/0.3)]"></span><span class="break-words text-[11px] font-medium leading-tight sm:text-sm group-aria-expanded:font-bold">Learning</span></button></li>
+            <li><button type="button" class="stage-btn group flex w-full flex-col items-center gap-3 text-center" aria-expanded="false" aria-controls="stage-3"><span class="relative z-10 h-6 w-6 rounded-full border-2 border-mute bg-bg transition group-hover:scale-125 group-aria-expanded:scale-125 group-aria-expanded:border-rec group-aria-expanded:bg-rec group-aria-expanded:shadow-[0_0_0_6px_rgb(239_83_80/0.3)]"></span><span class="break-words text-[11px] font-medium leading-tight sm:text-sm group-aria-expanded:font-bold">Building Projects</span></button></li>
+            <li><button type="button" class="stage-btn group flex w-full flex-col items-center gap-3 text-center" aria-expanded="false" aria-controls="stage-4"><span class="relative z-10 h-6 w-6 rounded-full border-2 border-mute bg-bg transition group-hover:scale-125 group-aria-expanded:scale-125 group-aria-expanded:border-rec group-aria-expanded:bg-rec group-aria-expanded:shadow-[0_0_0_6px_rgb(239_83_80/0.3)]"></span><span class="break-words text-[11px] font-medium leading-tight sm:text-sm group-aria-expanded:font-bold">Developing Technical Skills</span></button></li>
+            <li><button type="button" class="stage-btn group flex w-full flex-col items-center gap-3 text-center" aria-expanded="false" aria-controls="stage-5"><span class="relative z-10 h-6 w-6 rounded-full border-2 border-mute bg-bg transition group-hover:scale-125 group-aria-expanded:scale-125 group-aria-expanded:border-rec group-aria-expanded:bg-rec group-aria-expanded:shadow-[0_0_0_6px_rgb(239_83_80/0.3)]"></span><span class="break-words text-[11px] font-medium leading-tight sm:text-sm group-aria-expanded:font-bold">Future IT Professional</span></button></li>
+          </ol>
+        </div>
+
+        <div class="mt-10 min-h-[6rem] border-l-4 border-rec pl-5">
+          <p id="stage-hint" class="text-xl text-mute">No stage selected yet.</p>
+          <p id="stage-1" class="stage-panel hidden text-xl">I'm a BSIT student at Urdaneta City University, building a base in programming, networks and systems.</p>
+          <p id="stage-2" class="stage-panel hidden text-xl">I study backend concepts, web fundamentals and security topics like HTTPS/TLS, and practice them in class.</p>
+          <p id="stage-3" class="stage-panel hidden text-xl">I turn what I learn into working projects, such as a staff dashboard concept and this portfolio.</p>
+          <p id="stage-4" class="stage-panel hidden text-xl">With every project I go deeper into JavaScript, backend development and responsive design.</p>
+          <p id="stage-5" class="stage-panel hidden text-xl">My goal is to join an IT team as a developer who can build reliable systems and explain them clearly.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="mx-auto max-w-7xl px-5 py-20 sm:px-8" aria-labelledby="projects-title">
+      <h2 id="projects-title" class="font-display text-[15vw] font-black uppercase leading-none sm:text-8xl xl:text-9xl bg-gradient-to-b from-ink to-mute bg-clip-text text-transparent">Projects</h2>
+
+      <div class="mt-8 flex flex-wrap gap-2" role="group" aria-label="Filter projects by category">
+        <button type="button" class="filter-btn rounded-sm border-2 border-line px-4 py-2 text-sm font-medium transition hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgb(96_150_255/0.5)] aria-pressed:border-brand aria-pressed:bg-brand aria-pressed:font-bold aria-pressed:text-bg" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="filter-btn rounded-sm border-2 border-line px-4 py-2 text-sm font-medium transition hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgb(96_150_255/0.5)] aria-pressed:border-brand aria-pressed:bg-brand aria-pressed:font-bold aria-pressed:text-bg" data-filter="web" aria-pressed="false">Web Development</button>
+        <button type="button" class="filter-btn rounded-sm border-2 border-line px-4 py-2 text-sm font-medium transition hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgb(96_150_255/0.5)] aria-pressed:border-brand aria-pressed:bg-brand aria-pressed:font-bold aria-pressed:text-bg" data-filter="creative" aria-pressed="false">Creative</button>
+      </div>
+
+      <div class="mt-10 grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
+        <div class="rounded-sm border-2 border-line bg-panel p-5">
+          <div class="mb-4 flex items-center justify-between gap-3">
+            <h3 class="font-display text-3xl font-extrabold uppercase leading-none">Project manager</h3>
+            <button id="reset-project-form" type="button" class="rounded-sm border-2 border-line px-3 py-1.5 text-sm font-medium transition hover:border-brand hover:text-brand">Reset</button>
+          </div>
+
+          <form id="project-form" novalidate class="grid gap-4">
+            <input id="project-id" name="id" type="hidden">
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label for="project-title" class="mb-1 block text-sm font-bold">Title</label>
+                <input id="project-title" name="title" type="text" class="w-full rounded-sm border-2 border-mute bg-bg px-4 py-3 text-ink transition focus:border-brand focus:shadow-[0_0_0_3px_rgb(96_150_255/0.35)]">
+                <p id="project-title-error" class="mt-1 text-sm font-semibold text-red-300"></p>
+              </div>
+
+              <div>
+                <label for="project-category" class="mb-1 block text-sm font-bold">Category</label>
+                <select id="project-category" name="category" class="w-full rounded-sm border-2 border-mute bg-bg px-4 py-3 text-ink transition focus:border-brand focus:shadow-[0_0_0_3px_rgb(96_150_255/0.35)]">
+                  <option value="web">Web Development</option>
+                  <option value="creative">Creative</option>
+                </select>
+                <p id="project-category-error" class="mt-1 text-sm font-semibold text-red-300"></p>
+              </div>
+            </div>
+
+            <div>
+              <label for="project-description" class="mb-1 block text-sm font-bold">Description</label>
+              <textarea id="project-description" name="description" rows="4" class="w-full rounded-sm border-2 border-mute bg-bg px-4 py-3 text-ink transition focus:border-brand focus:shadow-[0_0_0_3px_rgb(96_150_255/0.35)]"></textarea>
+              <p id="project-description-error" class="mt-1 text-sm font-semibold text-red-300"></p>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label for="project-stack" class="mb-1 block text-sm font-bold">Tech stack</label>
+                <input id="project-stack" name="techStack" type="text" placeholder="HTML, Tailwind CSS, JavaScript" class="w-full rounded-sm border-2 border-mute bg-bg px-4 py-3 text-ink transition focus:border-brand focus:shadow-[0_0_0_3px_rgb(96_150_255/0.35)]">
+                <p id="project-stack-error" class="mt-1 text-sm font-semibold text-red-300"></p>
+              </div>
+
+              <div>
+                <label for="project-date" class="mb-1 block text-sm font-bold">Completion date</label>
+                <input id="project-date" name="date" type="date" class="w-full rounded-sm border-2 border-mute bg-bg px-4 py-3 text-ink transition focus:border-brand focus:shadow-[0_0_0_3px_rgb(96_150_255/0.35)]">
+                <p id="project-date-error" class="mt-1 text-sm font-semibold text-red-300"></p>
+              </div>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label for="project-url" class="mb-1 block text-sm font-bold">Project URL</label>
+                <input id="project-url" name="projectUrl" type="url" placeholder="https://example.com" class="w-full rounded-sm border-2 border-mute bg-bg px-4 py-3 text-ink transition focus:border-brand focus:shadow-[0_0_0_3px_rgb(96_150_255/0.35)]">
+                <p id="project-url-error" class="mt-1 text-sm font-semibold text-red-300"></p>
+              </div>
+
+              <div>
+                <label for="project-repo" class="mb-1 block text-sm font-bold">Repository URL</label>
+                <input id="project-repo" name="repoUrl" type="url" placeholder="https://github.com/your/repo" class="w-full rounded-sm border-2 border-mute bg-bg px-4 py-3 text-ink transition focus:border-brand focus:shadow-[0_0_0_3px_rgb(96_150_255/0.35)]">
+                <p id="project-repo-error" class="mt-1 text-sm font-semibold text-red-300"></p>
+              </div>
+            </div>
+
+            <div>
+              <label for="project-image" class="mb-1 block text-sm font-bold">Image URL</label>
+              <input id="project-image" name="image" type="url" placeholder="https://images.example.com/project.jpg" class="w-full rounded-sm border-2 border-mute bg-bg px-4 py-3 text-ink transition focus:border-brand focus:shadow-[0_0_0_3px_rgb(96_150_255/0.35)]">
+              <p id="project-image-error" class="mt-1 text-sm font-semibold text-red-300"></p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3">
+              <button type="submit" class="rounded-sm bg-gradient-to-r from-brand to-cyan-300 px-5 py-3 font-bold text-bg transition hover:-translate-y-0.5 hover:shadow-[0_10px_30px_-8px_rgb(96_150_255/0.8)]">Save project</button>
+              <button id="cancel-edit-project" type="button" class="hidden rounded-sm border-2 border-line px-5 py-3 font-bold transition hover:border-brand hover:text-brand">Cancel edit</button>
+            </div>
+
+            <p id="project-success" role="status" class="hidden rounded-sm border-2 border-brand bg-panel p-3 font-semibold text-ink"></p>
+          </form>
+        </div>
+
+        <aside class="rounded-sm border-2 border-line bg-gradient-to-br from-panel to-bg p-5">
+          <h3 class="font-display text-2xl font-extrabold uppercase">Project overview</h3>
+          <ul class="mt-4 space-y-3 text-sm text-mute">
+            <li class="flex items-center justify-between gap-2 border-b border-line pb-2"><span>Visible records</span><strong id="record-count" class="text-lg text-ink">0</strong></li>
+            <li class="flex items-center justify-between gap-2 border-b border-line pb-2"><span>Web projects</span><strong id="web-count" class="text-lg text-ink">0</strong></li>
+            <li class="flex items-center justify-between gap-2"><span>Creative projects</span><strong id="creative-count" class="text-lg text-ink">0</strong></li>
+          </ul>
+        </aside>
+      </div>
+
+      <div class="mt-10 border-b-2 border-line">
+        <div id="project-list" class="space-y-0"></div>
+      </div>
+
+      <p id="no-projects" class="mt-6 hidden border-2 border-dashed border-line p-5" role="status">No projects in this category yet. Try another filter.</p>
+    </section>
+
+    <!-- YOUTUBE CHANNEL PERFORMANCE -->
+    <section id="youtube-performance" class="mx-auto max-w-7xl px-5 pb-20 sm:px-8" aria-labelledby="youtube-performance-title">
+      <h2 id="youtube-performance-title" class="font-display text-[15vw] font-black uppercase leading-none sm:text-8xl xl:text-9xl bg-gradient-to-b from-ink to-mute bg-clip-text text-transparent">YouTube Performance</h2>
+
+      <p class="mt-4 max-w-2xl text-lg text-mute">A snapshot of my YouTube channel analytics and video content performance.</p>
+
+      <div class="mt-8 grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-start">
+        <figure class="overflow-hidden rounded-sm border-2 border-line bg-panel p-2 transition duration-300 hover:border-brand hover:shadow-[0_0_0_1px_rgb(96_150_255),0_14px_40px_-12px_rgb(96_150_255/0.35)]">
+          <img src="images/ytchannel.png" alt="Screenshot of my YouTube Studio channel analytics" class="w-full rounded-sm object-contain" loading="lazy">
+          <figcaption class="mt-2 px-2 pb-1 text-sm text-mute">YouTube Studio analytics screenshot</figcaption>
+        </figure>
+
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+          <article class="rounded-sm border-2 border-line bg-gradient-to-br from-panel to-bg p-6 transition hover:-translate-y-1 hover:border-brand">
+            <p class="font-mono text-xs text-mute">VIEWS</p>
+            <p class="mt-2 font-display text-5xl font-black text-brand">279K+</p>
+            <p class="mt-1 text-sm text-mute">Views shown in the analytics screenshot</p>
+          </article>
+
+          <article class="rounded-sm border-2 border-line bg-gradient-to-br from-panel to-bg p-6 transition hover:-translate-y-1 hover:border-brand">
+            <p class="font-mono text-xs text-mute">WATCH TIME</p>
+            <p class="mt-2 font-display text-5xl font-black text-brand">605.2</p>
+            <p class="mt-1 text-sm text-mute">Hours of watch time</p>
+          </article>
+
+          <article class="rounded-sm border-2 border-line bg-gradient-to-br from-panel to-bg p-6 transition hover:-translate-y-1 hover:border-brand sm:col-span-2 lg:col-span-1">
+            <p class="font-mono text-xs text-mute">SUBSCRIBERS</p>
+            <p class="mt-2 font-display text-5xl font-black text-brand">+394</p>
+            <p class="mt-1 text-sm text-mute">Subscribers gained in the shown period</p>
+          </article>
+
+          <a href="https://www.youtube.com/channel/UCuOyhQLtnnMiJHZPuaZqA3Q" target="_blank" rel="noopener noreferrer" class="inline-block rounded-sm bg-gradient-to-r from-brand to-cyan-300 px-6 py-3 text-center font-bold text-bg transition hover:-translate-y-1 hover:shadow-[0_10px_30px_-8px_rgb(96_150_255/0.8)]">Visit My YouTube Channel ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION / EXPERIENCE -->
+    <section id="education" class="mx-auto max-w-7xl px-5 pb-20 sm:px-8" aria-labelledby="edu-title">
+      <h2 id="edu-title" class="font-display text-[15vw] font-black uppercase leading-none sm:text-8xl xl:text-9xl bg-gradient-to-b from-ink to-mute bg-clip-text text-transparent">Education</h2>
+
+      <ol class="mt-12 divide-y-2 divide-line border-y-2 border-line">
+        <li class="reveal grid gap-1 py-5 md:grid-cols-[14rem_1fr]">
+          <h3 class="font-display text-2xl font-extrabold uppercase">Education</h3>
+          <p class="text-mute"><strong class="text-ink">BS Information Technology</strong>, Urdaneta City University, 3rd Year</p>
+        </li>
+        <li class="reveal grid gap-1 py-5 md:grid-cols-[14rem_1fr]">
+          <h3 class="font-display text-2xl font-extrabold uppercase">Coursework</h3>
+          <p class="text-mute"><strong class="text-ink">Advanced Web Development (IT ELEC01)</strong> and a Cryptography Protocols Laboratory covering HTTPS/TLS and VPN concepts.</p>
+        </li>
+        <li class="reveal grid gap-1 py-5 md:grid-cols-[14rem_1fr]">
+          <h3 class="font-display text-2xl font-extrabold uppercase">Experience</h3>
+          <p class="text-mute"><strong class="text-ink">Video editing and digital content creation</strong>, about 3 years and around 70 videos edited using CapCut.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="bg-gradient-to-tr from-blue-900 via-solid to-bg px-5 py-20 text-white sm:px-8" aria-labelledby="contact-title">
+      <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
+        <div>
+          <h2 id="contact-title" class="font-display text-[15vw] font-black uppercase leading-none sm:text-8xl xl:text-9xl bg-gradient-to-b from-ink to-mute bg-clip-text text-transparent">Let's work together</h2>
+          <p class="mt-6 max-w-md text-lg">Got a video to cut or a site to build? Say hi.</p>
+
+          <ul class="mt-6 space-y-3 font-medium">
+            <li><a class="underline underline-offset-4 hover:no-underline" href="mailto:dwayne26arjon@gmail.com">Email: dwayne26arjon@gmail.com</a></li>
+            <li><a class="underline underline-offset-4 hover:no-underline" href="https://www.youtube.com/channel/UCuOyhQLtnnMiJHZPuaZqA3Q" target="_blank" rel="noopener noreferrer">YouTube channel (opens in new tab)</a></li>
+            <li>Based in Urdaneta City, Pangasinan, Philippines</li>
+          </ul>
+        </div>
+
+        <form id="contact-form" novalidate class="space-y-4 self-end">
+          <div>
+            <label for="name" class="mb-1 block text-sm font-bold">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" aria-describedby="name-error" class="w-full rounded-sm border-2 border-mute bg-bg px-4 py-3 text-ink transition focus:border-brand focus:shadow-[0_0_0_3px_rgb(96_150_255/0.35)]">
+            <p id="name-error" class="mt-1 text-sm font-semibold text-red-300"></p>
+          </div>
+
+          <div>
+            <label for="email" class="mb-1 block text-sm font-bold">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" aria-describedby="email-error" class="w-full rounded-sm border-2 border-mute bg-bg px-4 py-3 text-ink transition focus:border-brand focus:shadow-[0_0_0_3px_rgb(96_150_255/0.35)]">
+            <p id="email-error" class="mt-1 text-sm font-semibold text-red-300"></p>
+          </div>
+
+          <div>
+            <label for="message" class="mb-1 block text-sm font-bold">Message</label>
+            <textarea id="message" name="message" rows="5" aria-describedby="message-error" class="w-full rounded-sm border-2 border-mute bg-bg px-4 py-3 text-ink transition focus:border-brand focus:shadow-[0_0_0_3px_rgb(96_150_255/0.35)]"></textarea>
+            <p id="message-error" class="mt-1 text-sm font-semibold text-red-300"></p>
+          </div>
+
+          <button type="submit" class="rounded-sm bg-gradient-to-r from-brand to-cyan-300 bg-[length:200%_100%] px-8 py-3 font-bold text-bg transition-all duration-500 hover:-translate-y-1 hover:bg-right hover:shadow-[0_10px_30px_-8px_rgb(96_150_255/0.8)]">Send message</button>
+          <p id="form-success" role="status" class="hidden rounded-sm border-2 border-brand bg-panel p-4 font-semibold text-ink"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gradient-to-b from-bg to-slate-950 text-slate-300">
+    <div class="mx-auto grid max-w-7xl gap-8 px-5 py-10 sm:px-8 md:grid-cols-3">
+      <div>
+        <p class="font-display text-2xl font-black uppercase text-white">Dwayne Arjon T. Santiago</p>
+        <p class="mt-2 text-sm">Aspiring IT professional building useful, functional and creative projects.</p>
+      </div>
+
+      <nav aria-label="Footer navigation">
+        <ul class="space-y-2 text-sm">
+          <li><a class="hover:text-white hover:underline" href="#about">About</a></li>
+          <li><a class="hover:text-white hover:underline" href="#projects">Projects</a></li>
+          <li><a class="hover:text-white hover:underline" href="#youtube-performance">YouTube Analytics</a></li>
+          <li><a class="hover:text-white hover:underline" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <ul class="space-y-2 text-sm">
+        <li><a class="hover:text-white hover:underline" href="mailto:dwayne26arjon@gmail.com">dwayne26arjon@gmail.com</a></li>
+        <li><a class="hover:text-white hover:underline" href="https://www.youtube.com/channel/UCuOyhQLtnnMiJHZPuaZqA3Q" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        <li>Urdaneta City, Philippines</li>
+      </ul>
+    </div>
+
+    <p class="border-t border-slate-800 px-5 py-4 text-center text-sm">© <span id="year">2026</span> Dwayne Arjon T. Santiago. Designed and built with HTML, Tailwind CSS &amp; JavaScript.</p>
+  </footer>
+
+  <div id="cursor" aria-hidden="true" class="pointer-events-none fixed left-0 top-0 z-[60] hidden">
+    <div id="cursor-ring" class="h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-brand transition duration-200"></div>
+  </div>
+
+</body>
+</html>
